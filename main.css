@@ -1,0 +1,203 @@
+/* Reset and base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #f0f0f0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Card container */
+.card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    padding: 40px 50px;
+    width: 100%;
+    max-width: 50%;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    text-align: center;
+    color: #fff;
+}
+
+/* Search box */
+.search {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.search input {
+    flex: 1;
+    padding: 15px 20px;
+    border-radius: 50px;
+    border: none;
+    font-size: 18px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.25);
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.search input::placeholder {
+    color: #ddd;
+}
+
+.search input:focus {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Buttons */
+.search button {
+    background-color: #4a90e2;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.5);
+}
+
+.search button:hover {
+    background-color: #357abd;
+    transform: scale(1.1);
+}
+
+.search button img {
+    width: 24px;
+    filter: invert(1);
+}
+
+/* Toggle Unit Button */
+#toggleUnitBtn {
+    border-radius: 50px;
+    width: auto;
+    padding: 0 20px;
+    font-size: 16px;
+    height: 60px;
+    background-color: #4a90e2;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.5);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#toggleUnitBtn:hover {
+    background-color: #357abd;
+    transform: scale(1.05);
+}
+
+/* Weather Icon */
+.weather-icon {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+/* Temperature and City */
+.temp {
+    font-size: 72px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.city {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+}
+
+/* Details section */
+.details {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.col {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 15px 25px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    min-width: 120px;
+    flex: 1;
+}
+
+.col img {
+    width: 40px;
+    height: 40px;
+    filter: invert(1);
+}
+
+.humidity,
+.wind {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.col p:last-child {
+    font-size: 14px;
+    color: #ccc;
+    margin-top: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .card {
+        padding: 30px 20px;
+        max-width: 90vw;
+    }
+
+    .temp {
+        font-size: 54px;
+    }
+
+    .city {
+        font-size: 24px;
+    }
+
+    .details {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .col {
+        justify-content: center;
+    }
+
+    .search {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .search button,
+    #toggleUnitBtn {
+        width: 100%;
+        border-radius: 30px;
+    }
+}
